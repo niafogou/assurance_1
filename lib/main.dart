@@ -1,6 +1,6 @@
-import 'package:assurance/views/static/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:assurance/views/contrats_page.dart';
 
 void main() {
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: ContratsPage()));
 }

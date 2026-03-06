@@ -11,23 +11,25 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: const ListTile(
-          title: Text(
-            'Bonjour, Mariam',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-          subtitle: Text('Heureuse de vous revoir 👋'),
-        ),
-        actions: [
-          CircleAvatar(
-            backgroundColor: Color.fromARGB(255, 234, 243, 255),
-            child: Icon(Icons.notifications_active_outlined, size: 25),
-          ),
-          SizedBox(width: 20),
-          CircleAvatar(
+          leading: CircleAvatar(
             radius: 25,
             backgroundImage: AssetImage("asset/mariam.jpeg"),
           ),
-          SizedBox(width: 10),
+          title: Text(
+            'Bonjour,',
+            style: TextStyle(fontSize: 16, color: Colors.grey),
+          ),
+          subtitle: Text(
+            'Soro',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+          ),
+        ),
+        actions: const [
+          CircleAvatar(
+            backgroundColor: Color(0xFFEAF3FF),
+            child: Icon(Icons.notifications_none, color: Colors.blue),
+          ),
+          SizedBox(width: 15),
         ],
       ),
 
@@ -36,12 +38,13 @@ class HomePage extends StatelessWidget {
         child: ListView(
           children: [
             Container(
-              height: 220,
+              height: 210,
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 51, 48, 223),
-                borderRadius: BorderRadius.circular(20),
+                color: Color(0xFF1F66E5),
+                borderRadius: BorderRadius.circular(25),
               ),
+
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -49,78 +52,72 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Cotisation mensuelle",
-                        style: TextStyle(color: Colors.white70, fontSize: 16),
+                        "MENSUALITÉ À PAYER",
+                        style: TextStyle(color: Colors.white70),
                       ),
+
                       Container(
                         padding: EdgeInsets.symmetric(
-                          horizontal: 15,
-                          vertical: 6,
+                          horizontal: 12,
+                          vertical: 5,
                         ),
                         decoration: BoxDecoration(
                           color: Colors.white24,
                           borderRadius: BorderRadius.circular(20),
                         ),
-                        child: Text(
-                          "À jour",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),
+                        child: Row(
+                          children: const [
+                            Icon(
+                              Icons.check_circle,
+                              color: Colors.white,
+                              size: 16,
+                            ),
+                            SizedBox(width: 5),
+                            Text(
+                              "À jour",
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
                         ),
                       ),
                     ],
                   ),
+
                   SizedBox(height: 15),
+
                   Text(
-                    "9.347.387 FCFA",
+                    "816.6665 FCFA",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 30,
+                      fontSize: 34,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 25),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Container(
-                          padding: EdgeInsets.symmetric(vertical: 15),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Mes paiements",
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 51, 48, 223),
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
+
+                  SizedBox(height: 10),
+
+                  Text(
+                    "Prochain prélèvement le 15 Oct",
+                    style: TextStyle(color: Colors.white70),
+                  ),
+
+                  SizedBox(height: 20),
+
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "Voir les détails",
+                        style: TextStyle(
+                          color: Color(0xFF1F66E5),
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(width: 15),
-                      Expanded(
-                        child: Container(
-                          padding: EdgeInsets.symmetric(vertical: 15),
-                          decoration: BoxDecoration(
-                            color: Colors.white24,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: Center(
-                            child: Text(
-                              "Support",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ],
               ),
@@ -147,13 +144,10 @@ class HomePage extends StatelessWidget {
                         color: Color(0xFFEAF3FF),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Icon(
-                        Icons.note_add_outlined,
-                        color: Color.fromARGB(255, 51, 48, 223),
-                      ),
+                      child: Icon(Icons.note_add_outlined, color: Colors.blue),
                     ),
                     SizedBox(height: 8),
-                    Text("Déclarer\nsinistre", textAlign: TextAlign.center),
+                    Text("Déclarer"),
                   ],
                 ),
 
@@ -168,11 +162,11 @@ class HomePage extends StatelessWidget {
                       ),
                       child: Icon(
                         Icons.description_outlined,
-                        color: Color.fromARGB(255, 51, 48, 223),
+                        color: Colors.blue,
                       ),
                     ),
                     SizedBox(height: 8),
-                    Text("Mes\ndocuments", textAlign: TextAlign.center),
+                    Text("Attestation"),
                   ],
                 ),
 
@@ -185,13 +179,10 @@ class HomePage extends StatelessWidget {
                         color: Color(0xFFEAF3FF),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Icon(
-                        Icons.phone_outlined,
-                        color: Color.fromARGB(255, 51, 48, 223),
-                      ),
+                      child: Icon(Icons.phone_outlined, color: Colors.blue),
                     ),
                     SizedBox(height: 8),
-                    Text("Urgence\n24/7", textAlign: TextAlign.center),
+                    Text("Assistance"),
                   ],
                 ),
 
@@ -204,13 +195,10 @@ class HomePage extends StatelessWidget {
                         color: Color(0xFFEAF3FF),
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: Icon(
-                        Icons.settings_outlined,
-                        color: Color.fromARGB(255, 51, 48, 223),
-                      ),
+                      child: Icon(Icons.people_outline, color: Colors.blue),
                     ),
                     SizedBox(height: 8),
-                    Text("Gérer\noptions", textAlign: TextAlign.center),
+                    Text("Courtier"),
                   ],
                 ),
               ],
@@ -218,29 +206,20 @@ class HomePage extends StatelessWidget {
 
             SizedBox(height: 25),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Mes Assurances",
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  "Tout voir",
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 51, 48, 223),
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
+            Text(
+              "Mes Contrats (3)",
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
+
+            SizedBox(height: 15),
 
             Container(
               padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
-                color: Colors.grey.shade200,
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
               ),
+
               child: Row(
                 children: [
                   Container(
@@ -252,30 +231,35 @@ class HomePage extends StatelessWidget {
                     ),
                     child: Icon(Icons.directions_car, color: Colors.blue),
                   ),
+
                   SizedBox(width: 15),
+
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Auto • Toyota Yaris",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          "Assurance Auto",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
                         ),
                         SizedBox(height: 5),
                         Text(
-                          "N° 4829103 • Tous risques",
+                          "N° 492-381-00",
                           style: TextStyle(color: Colors.grey),
                         ),
                       ],
                     ),
                   ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: Colors.green.shade100,
-                      borderRadius: BorderRadius.circular(15),
+
+                  Text(
+                    "Actif",
+                    style: TextStyle(
+                      color: Colors.green.shade200,
+                      fontWeight: FontWeight.bold,
                     ),
-                    child: Text("Actif", style: TextStyle(color: Colors.green)),
                   ),
                 ],
               ),
@@ -286,9 +270,64 @@ class HomePage extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
-                color: Colors.grey.shade200,
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
               ),
+
+              child: Row(
+                children: [
+                  Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFF4E2C8),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Icon(Icons.home, color: Colors.orange),
+                  ),
+
+                  SizedBox(width: 15),
+
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Habitation",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          "N° 110-293-84",
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  Text(
+                    "Actif",
+                    style: TextStyle(
+                      color: Colors.green.shade200,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 15),
+
+            Container(
+              padding: EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+              ),
+
               child: Row(
                 children: [
                   Container(
@@ -298,80 +337,37 @@ class HomePage extends StatelessWidget {
                       color: Color(0xFFDDF2E3),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Icon(Icons.home_outlined, color: Colors.green),
+                    child: Icon(Icons.favorite_border, color: Colors.green),
                   ),
+
                   SizedBox(width: 15),
+
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Habitation • Principale",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          "Santé Famille",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
                         ),
                         SizedBox(height: 5),
                         Text(
-                          "24 Rue de la Paix, Abidjan",
+                          "N° 993-112-44",
                           style: TextStyle(color: Colors.grey),
                         ),
                       ],
                     ),
                   ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: Colors.green.shade100,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Text("Actif", style: TextStyle(color: Colors.green)),
-                  ),
-                ],
-              ),
-            ),
 
-            SizedBox(height: 15),
-
-            Container(
-              padding: EdgeInsets.all(15),
-              decoration: BoxDecoration(
-                color: Colors.grey.shade200,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Row(
-                children: [
-                  Container(
-                    height: 60,
-                    width: 60,
-                    decoration: BoxDecoration(
-                      color: Color(0xFFF8DADA),
-                      borderRadius: BorderRadius.circular(15),
+                  Text(
+                    "Actif",
+                    style: TextStyle(
+                      color: Colors.green.shade200,
+                      fontWeight: FontWeight.bold,
                     ),
-                    child: Icon(Icons.favorite_border, color: Colors.red),
-                  ),
-                  SizedBox(width: 15),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Santé • Famille",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          "Formule Confort Plus",
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                    decoration: BoxDecoration(
-                      color: Colors.green.shade100,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Text("Actif", style: TextStyle(color: Colors.green)),
                   ),
                 ],
               ),
@@ -385,12 +381,10 @@ class HomePage extends StatelessWidget {
       bottomNavigationBar: Container(
         height: 80,
         decoration: BoxDecoration(
-          color: Colors.grey.shade200,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
+          color: Colors.white,
+          border: Border(top: BorderSide(color: Colors.grey.shade200)),
         ),
+
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -402,6 +396,7 @@ class HomePage extends StatelessWidget {
                 Text("Accueil", style: TextStyle(color: Colors.blue)),
               ],
             ),
+
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
@@ -410,14 +405,16 @@ class HomePage extends StatelessWidget {
                 Text("Contrats", style: TextStyle(color: Colors.grey)),
               ],
             ),
+
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                Icon(Icons.shield_outlined, color: Colors.grey),
+                Icon(Icons.umbrella_outlined, color: Colors.grey),
                 SizedBox(height: 5),
                 Text("Sinistres", style: TextStyle(color: Colors.grey)),
               ],
             ),
+
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
