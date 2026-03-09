@@ -38,7 +38,6 @@ class ContratsPage extends StatelessWidget {
         child: ListView(
           children: [
             Container(
-              height: 210,
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: const Color(0xFF1F66E5),
